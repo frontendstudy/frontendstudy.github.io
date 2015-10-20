@@ -51,7 +51,7 @@
 
 水平居中布局对于子元素和父元素都是固定宽度的情况，居中布局非常容易实现，直接margin:0 auto;即可。问题在于子元素和父元素的宽度都未知的情况下，该如何实现呢？
 方法1：利用text-align和display:inline-block实现方法思路： 对外层父元素设">
-<meta property="og:updated_time" content="2015-10-20T14:46:08.000Z">
+<meta property="og:updated_time" content="2015-10-20T14:55:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS常见布局方式总结（上）">
 <meta name="twitter:description" content="参加过各大公司的前端面试，发现很喜欢考布局方面的内容，基本上每次遇到这种问题都要想好久，所以在这里总结下关于这方面的知识。
@@ -279,7 +279,8 @@
     <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateX</span>(-<span class="number">50%</span>)</span></span>;
 }</span>
 </code></pre><h3 id="方法4：利用flex实现">方法4：利用<code>flex</code>实现</h3><p><strong>方法思路</strong>： 对父元素设置<code>display:flex; justify-content:center;</code>即可。</p>
-<p><strong>实现原理</strong>： 利用CSS3的flex弹性布局原理，可轻易控制元素的水平及垂直对齐方式。<br><strong>实现代码（HTML结构）</strong></p>
+<p><strong>实现原理</strong>： 利用CSS3的flex弹性布局原理，可轻易控制元素的水平及垂直对齐方式。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
 <pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
     &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
 &lt;/<span class="keyword">div</span>&gt;
@@ -359,6 +360,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/20/CSSFragment2/" rel="prev">CSS常见布局方式总结（下）</a>
             
           </div>
 
@@ -453,7 +456,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
