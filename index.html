@@ -189,6 +189,185 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/20/cssFragment/" itemprop="url">
+                CSS常见布局方式总结
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-20T21:53:53+08:00" content="2015-10-20">
+            2015-10-20
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/20/cssFragment/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/cssFragment/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><blockquote>
+<p>参加过各大公司的前端面试，发现很喜欢考布局方面的内容，基本上每次遇到这种问题都要想好久，所以在这里总结下关于这方面的知识。</p>
+</blockquote>
+<h1 id="水平居中布局">水平居中布局</h1><p>对于子元素和父元素都是固定宽度的情况，居中布局非常容易实现，直接<code>margin:0 auto;</code>即可。问题在于子元素和父元素的宽度都未知的情况下，该如何实现呢？</p>
+<h3 id="方法1：利用text-align和display:inline-block实现">方法1：利用<code>text-align</code>和<code>display:inline-block</code>实现</h3><p><strong>方法思路</strong>： 对外层父元素设置<code>text-align:center;</code>；对内层子元素设置<code>display:inline-block;</code>即可实现效果。</p>
+<p><strong>实现原理</strong>： <code>text-align</code>会使得行内元素水平居中。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
+}</span>
+</code></pre><h3 id="方法2：利用table和_margin:0_auto实现">方法2：利用<code>table</code>和 <code>margin:0 auto</code>实现</h3><p><strong>方法思路</strong>： 对内层子元素设置<code>display:table;margin:0 auto;</code>即可实现效果。</p>
+<p><strong>实现原理</strong>： 根据table元素的特性。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+   <span class="comment">/*父元素什么都不需要设置*/</span>
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> table</span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto</span></span>;
+}</span>
+</code></pre><h3 id="方法3：利用absolute和_transform实现">方法3：利用<code>absolute</code>和 <code>transform</code>实现</h3><p><strong>方法思路</strong>： 父元素相对定位，子元素绝对定位，设置left值为50%，再拉回本身宽度的-50%.</p>
+<p><strong>实现原理</strong>： 绝对定位元素设置定位百分比相对于父级定位元素的宽度，translateX的偏移量相对于本身宽度。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+   <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50%</span></span></span>;
+    <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateX</span>(-<span class="number">50%</span>)</span></span>;
+}</span>
+</code></pre><h3 id="方法4：利用flex实现">方法4：利用<code>flex</code>实现</h3><p><strong>方法思路</strong>： 对父元素设置<code>display:flex; justify-content:center;</code>即可。</p>
+<p><strong>实现原理</strong>： 利用CSS3的flex弹性布局原理，可轻易控制元素的水平及垂直对齐方式。<br><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+   <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;
+   <span class="rule"><span class="attribute">justify-content</span>:<span class="value">center</span></span>;
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="comment">/*子元素什么都不需要设置*/</span>
+}</span>
+</code></pre><h1 id="垂直居中布局">垂直居中布局</h1><p>垂直居中可不能用<code>margin:auto 0;</code>来实现，所以相对于水平居中来说实现难度稍微大了些，总体来说总结了相似的几种方法如下：</p>
+<h3 id="方法1：利用table-cell和vertical-align实现">方法1：利用<code>table-cell</code>和<code>vertical-align</code>实现</h3><p><strong>方法思路</strong>： 对外层父元素设置<code>display:table-cell; vertical-align:middle;</code>；对内层子元素设置<code>display:inline-block;</code>即可实现效果。</p>
+<p><strong>实现原理</strong>： 单元格可以通过设置vertical-align来保证其内部的行内元素垂直居中。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>;
+    <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
+}</span>
+</code></pre><h3 id="方法2：利用absolute和_transform实现">方法2：利用<code>absolute</code>和 <code>transform</code>实现</h3><p><strong>方法思路</strong>： 父元素相对定位，子元素绝对定位，设置top值为50%，再拉回本身高度的-50%.</p>
+<p><strong>实现原理</strong>： 绝对定位元素设置定位百分比相对于父级定位元素的宽度，translateY的偏移量相对于本身高度。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+   <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50%</span></span></span>;
+    <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateY</span>(-<span class="number">50%</span>)</span></span>;
+}</span>
+</code></pre><h3 id="方法3：利用flex实现">方法3：利用<code>flex</code>实现</h3><p><strong>方法思路</strong>： 对父元素设置<code>display:flex; align-items:center;</code>即可。</p>
+<p><strong>实现原理</strong>： 利用CSS3的flex弹性布局原理，可轻易控制元素的水平及垂直对齐方式。</p>
+<p><strong>实现代码（HTML结构）</strong></p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><strong>实现代码（CSS样式）</strong></p>
+<pre><code><span class="class">.parent</span><span class="rules">{
+   <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;
+   <span class="rule"><span class="attribute">align-items</span>:<span class="value">center</span></span>;
+}</span>
+<span class="class">.child</span><span class="rules">{
+    <span class="comment">/*子元素什么都不需要设置*/</span>
+}</span>
+</code></pre><h1 id="水平垂直居中布局">水平垂直居中布局</h1><p>水平居中布局的方式主要是通过以上两种布局的组合来实现，主要使用以下几种方法：</p>
+<ul>
+<li>利用<code>inline-block+text-align+table-cell+vertical-align</code>实现</li>
+<li>利用<code>position+translate</code>实现</li>
+<li>利用<code>flex</code>实现</li>
+</ul>
+<p>具体实现细节不再赘述。</p>
+<p>未完，待续。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/22/my-new-post/" itemprop="url">
                 第一篇文章
               </a>
@@ -359,7 +538,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -373,7 +552,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
