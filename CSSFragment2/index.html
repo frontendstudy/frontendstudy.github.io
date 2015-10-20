@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -39,15 +39,38 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Nothing is difficult to the man who will try.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="frontendstudy">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="本文主要总结一下多列布局的常用方法和技巧。
+一列定宽 一列自适应实现效果
+实现方法1. 通过float和margin实现&amp;lt;div class=&quot;parent&quot;&amp;gt;
+    &amp;lt;div class=&quot;left&quot;&amp;gt;
+        &amp;lt;p&amp;gt;left&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;right&quot;&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS常见布局方式总结（下）">
+<meta property="og:url" content="http://yoursite.com/CSSFragment2/index.html">
 <meta property="og:site_name" content="frontendstudy">
-<meta property="og:description" content="Nothing is difficult to the man who will try.">
+<meta property="og:description" content="本文主要总结一下多列布局的常用方法和技巧。
+一列定宽 一列自适应实现效果
+实现方法1. 通过float和margin实现&amp;lt;div class=&quot;parent&quot;&amp;gt;
+    &amp;lt;div class=&quot;left&quot;&amp;gt;
+        &amp;lt;p&amp;gt;left&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;right&quot;&amp;gt;">
+<meta property="og:image" content="http://yoursite.com/../images/cssFragment/1.png">
+<meta property="og:image" content="http://yoursite.com/../images/cssFragment/2.png">
+<meta property="og:image" content="http://yoursite.com/../images/cssFragment/3.png">
+<meta property="og:image" content="http://yoursite.com/../images/cssFragment/4.png">
+<meta property="og:updated_time" content="2015-10-20T16:15:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="frontendstudy">
-<meta name="twitter:description" content="Nothing is difficult to the man who will try.">
+<meta name="twitter:title" content="CSS常见布局方式总结（下）">
+<meta name="twitter:description" content="本文主要总结一下多列布局的常用方法和技巧。
+一列定宽 一列自适应实现效果
+实现方法1. 通过float和margin实现&amp;lt;div class=&quot;parent&quot;&amp;gt;
+    &amp;lt;div class=&quot;left&quot;&amp;gt;
+        &amp;lt;p&amp;gt;left&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;right&quot;&amp;gt;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +80,7 @@
   };
 </script>
 
-  <title> frontendstudy </title>
+  <title> CSS常见布局方式总结（下） | frontendstudy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,9 +108,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -176,9 +197,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -189,9 +210,7 @@
           
           
             
-              <a class="post-title-link" href="/CSSFragment2/" itemprop="url">
-                CSS常见布局方式总结（下）
-              </a>
+              CSS常见布局方式总结（下）
             
           
         </h1>
@@ -226,8 +245,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><p>本文主要总结一下多列布局的常用方法和技巧。</p>
+        <span itemprop="articleBody"><p>本文主要总结一下多列布局的常用方法和技巧。</p>
 <h1 id="一列定宽_一列自适应">一列定宽 一列自适应</h1><h2 id="实现效果">实现效果</h2><p><img src="../images/cssFragment/1.png" alt=""></p>
 <h2 id="实现方法">实现方法</h2><h3 id="1-_通过float和margin实现">1. 通过<code>float</code>和<code>margin</code>实现</h3><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"parent"</span>&gt;</span>
     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>
@@ -516,358 +534,79 @@
 }</span>
 </code></pre><p>flex总是如此强大和优雅。</p>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cssFragment/" rel="next">CSS常见布局方式总结（上）</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/cssFragment/" itemprop="url">
-                CSS常见布局方式总结（上）
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-20T21:53:53+08:00" content="2015-10-20">
-            2015-10-20
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/cssFragment/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="cssFragment/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
-<p>参加过各大公司的前端面试，发现很喜欢考布局方面的内容，基本上每次遇到这种问题都要想好久，所以在这里总结下关于这方面的知识。</p>
-</blockquote>
-<h1 id="水平居中布局">水平居中布局</h1><p>对于子元素和父元素都是固定宽度的情况，居中布局非常容易实现，直接<code>margin:0 auto;</code>即可。问题在于子元素和父元素的宽度都未知的情况下，该如何实现呢？</p>
-<h3 id="方法1：利用text-align和display:inline-block实现">方法1：利用<code>text-align</code>和<code>display:inline-block</code>实现</h3><p><strong>方法思路</strong>： 对外层父元素设置<code>text-align:center;</code>；对内层子元素设置<code>display:inline-block;</code>即可实现效果。</p>
-<p><strong>实现原理</strong>： <code>text-align</code>会使得行内元素水平居中。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
-}</span>
-</code></pre><h3 id="方法2：利用table和_margin:0_auto实现">方法2：利用<code>table</code>和 <code>margin:0 auto</code>实现</h3><p><strong>方法思路</strong>： 对内层子元素设置<code>display:table;margin:0 auto;</code>即可实现效果。</p>
-<p><strong>实现原理</strong>： 根据table元素的特性。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-   <span class="comment">/*父元素什么都不需要设置*/</span>
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> table</span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto</span></span>;
-}</span>
-</code></pre><h3 id="方法3：利用absolute和_transform实现">方法3：利用<code>absolute</code>和 <code>transform</code>实现</h3><p><strong>方法思路</strong>： 父元素相对定位，子元素绝对定位，设置left值为50%，再拉回本身宽度的-50%.</p>
-<p><strong>实现原理</strong>： 绝对定位元素设置定位百分比相对于父级定位元素的宽度，translateX的偏移量相对于本身宽度。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-   <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50%</span></span></span>;
-    <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateX</span>(-<span class="number">50%</span>)</span></span>;
-}</span>
-</code></pre><h3 id="方法4：利用flex实现">方法4：利用<code>flex</code>实现</h3><p><strong>方法思路</strong>： 对父元素设置<code>display:flex; justify-content:center;</code>即可。</p>
-<p><strong>实现原理</strong>： 利用CSS3的flex弹性布局原理，可轻易控制元素的水平及垂直对齐方式。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-   <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;
-   <span class="rule"><span class="attribute">justify-content</span>:<span class="value">center</span></span>;
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="comment">/*子元素什么都不需要设置*/</span>
-}</span>
-</code></pre><h1 id="垂直居中布局">垂直居中布局</h1><p>垂直居中可不能用<code>margin:auto 0;</code>来实现，所以相对于水平居中来说实现难度稍微大了些，总体来说总结了相似的几种方法如下：</p>
-<h3 id="方法1：利用table-cell和vertical-align实现">方法1：利用<code>table-cell</code>和<code>vertical-align</code>实现</h3><p><strong>方法思路</strong>： 对外层父元素设置<code>display:table-cell; vertical-align:middle;</code>；对内层子元素设置<code>display:inline-block;</code>即可实现效果。</p>
-<p><strong>实现原理</strong>： 单元格可以通过设置vertical-align来保证其内部的行内元素垂直居中。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>;
-    <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
-}</span>
-</code></pre><h3 id="方法2：利用absolute和_transform实现">方法2：利用<code>absolute</code>和 <code>transform</code>实现</h3><p><strong>方法思路</strong>： 父元素相对定位，子元素绝对定位，设置top值为50%，再拉回本身高度的-50%.</p>
-<p><strong>实现原理</strong>： 绝对定位元素设置定位百分比相对于父级定位元素的宽度，translateY的偏移量相对于本身高度。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-   <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50%</span></span></span>;
-    <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateY</span>(-<span class="number">50%</span>)</span></span>;
-}</span>
-</code></pre><h3 id="方法3：利用flex实现">方法3：利用<code>flex</code>实现</h3><p><strong>方法思路</strong>： 对父元素设置<code>display:flex; align-items:center;</code>即可。</p>
-<p><strong>实现原理</strong>： 利用CSS3的flex弹性布局原理，可轻易控制元素的水平及垂直对齐方式。</p>
-<p><strong>实现代码（HTML结构）</strong></p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"parent"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"child"</span>&gt;child&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><strong>实现代码（CSS样式）</strong></p>
-<pre><code><span class="class">.parent</span><span class="rules">{
-   <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;
-   <span class="rule"><span class="attribute">align-items</span>:<span class="value">center</span></span>;
-}</span>
-<span class="class">.child</span><span class="rules">{
-    <span class="comment">/*子元素什么都不需要设置*/</span>
-}</span>
-</code></pre><h1 id="水平垂直居中布局">水平垂直居中布局</h1><p>水平居中布局的方式主要是通过以上两种布局的组合来实现，主要使用以下几种方法：</p>
-<ul>
-<li>利用<code>inline-block+text-align+table-cell+vertical-align</code>实现</li>
-<li>利用<code>position+translate</code>实现</li>
-<li>利用<code>flex</code>实现</li>
-</ul>
-<p>具体实现细节不再赘述。</p>
-<p>未完，待续。</p>
-</span>
-        
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/my-new-post/" itemprop="url">
-                第一篇文章
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-22T19:58:11+08:00" content="2015-09-22">
-            2015-09-22
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/my-new-post/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="my-new-post/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>第一次入住hexo大家庭，本人之前也不怎么写博客，很多学习的笔记都是手写的，现在觉得博客是一个很好的分享与交流的平台，不管自己水平有多菜，写文章就要认真写，对自己也是一种激励和鞭策。</p>
-<p>我将在之后的日子里将学习到的前端知识都做一个大致的总结，借助这个平台来分享。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/hello-world/" itemprop="url">
-                Hello World
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-14T21:06:47+08:00" content="2015-09-14">
-            2015-09-14
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="CSSFragment2/"
+                   data-title="CSS常见布局方式总结（下）" data-url="http://yoursite.com/CSSFragment2/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -884,6 +623,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -931,6 +679,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一列定宽_一列自适应"><span class="nav-number">1.</span> <span class="nav-text">一列定宽 一列自适应</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现效果"><span class="nav-number">1.1.</span> <span class="nav-text">实现效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方法"><span class="nav-number">1.2.</span> <span class="nav-text">实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_通过float和margin实现"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 通过float和margin实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_通过float和overflow实现"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 通过float和overflow实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_通过table实现"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 通过table实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_通过flex实现"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 通过flex实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一列不定宽_一列自适应"><span class="nav-number">2.</span> <span class="nav-text">一列不定宽 一列自适应</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现效果-1"><span class="nav-number">2.1.</span> <span class="nav-text">实现效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#等分布局"><span class="nav-number">3.</span> <span class="nav-text">等分布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现效果-2"><span class="nav-number">3.1.</span> <span class="nav-text">实现效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方法-1"><span class="nav-number">3.2.</span> <span class="nav-text">实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_通过float实现"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. 通过float实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_通过table实现"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. 通过table实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_通过flex实现"><span class="nav-number">3.2.3.</span> <span class="nav-text">3. 通过flex实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三列自适应布局"><span class="nav-number">4.</span> <span class="nav-text">三列自适应布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现效果-3"><span class="nav-number">4.1.</span> <span class="nav-text">实现效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方法-2"><span class="nav-number">4.2.</span> <span class="nav-text">实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_通过float和margin实现-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">1. 通过float和margin实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_通过float和overflow实现-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">2. 通过float和overflow实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_通过table实现-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">3. 通过table实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_通过position:absolute实现"><span class="nav-number">4.2.4.</span> <span class="nav-text">4. 通过position:absolute实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_通过flex实现"><span class="nav-number">4.2.5.</span> <span class="nav-text">5. 通过flex实现</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -1015,6 +774,165 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
