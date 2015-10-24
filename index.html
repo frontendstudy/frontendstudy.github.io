@@ -189,6 +189,141 @@
           
           
             
+              <a class="post-title-link" href="/常用事件小结/" itemprop="url">
+                常用事件小结
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-24T10:07:50+08:00" content="2015-10-24">
+            2015-10-24
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/常用事件小结/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="常用事件小结/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><blockquote>
+<p>JS作为一门事件驱动的语言，其事件的重要性可想而知。常见的事件及其相关用法有些繁杂，在此总结一下，以备后用。</p>
+</blockquote>
+<h1 id="鼠标事件">鼠标事件</h1><ul>
+<li>click         单击事件</li>
+<li>contextmenu   右击事件</li>
+<li>dblclick      双击事件</li>
+<li>mousedown     按下事件</li>
+<li>mouseup       抬起事件</li>
+<li>mousemove     移动事件</li>
+<li>mouseover     移入事件</li>
+<li>mouseout      移出事件</li>
+<li>mouseenter    移入事件</li>
+<li>mouseleave    移出事件</li>
+<li>mousewheel    滚轮事件</li>
+<li>DOMMouseScroll 滚轮事件</li>
+</ul>
+<h3 id="问：mousemove和mouseover事件有什么区别？">问：mousemove和mouseover事件有什么区别？</h3><p>答：mouseover事件在鼠标移入到元素上时会触发，在元素内移动不会再次触发，mousemove事件当鼠标在元素上每移动一小段距离都会触发一次。</p>
+<h3 id="问：mouseover/mouseenter、mouseout/mouseleave有什么区别？">问：mouseover/mouseenter、mouseout/mouseleave有什么区别？</h3><p>答：mouseover&amp;mouseout默认是冒泡的，当给父元素添加此事件时，子元素的移入移出会再次触发。mouseenter&amp;mouseleave是阻止冒泡的，一般来说后者更加符合我们的需求。</p>
+<h3 id="问：如何通过mousedown、mousemove、mouseup实现简单的拖拽功能？">问：如何通过mousedown、mousemove、mouseup实现简单的拖拽功能？</h3><p>答：大体上的思路是在mousedown时获得鼠标相对元素的位置，在mousemove时根据鼠标的偏移动态改变元素的位置，mouseup时取消move和up的事件。有三个关键点需要注意：</p>
+<ol>
+<li>为了防止鼠标移动过快脱离元素造成拖动功能暂时失效，要将事件注册在document上。</li>
+<li>为了防止父元素中有子元素时拖拽父元素，鼠标经过子元素会先触发子元素的mousemove造成混乱，需要将mousemove和mouseup都注册为捕获事件。</li>
+<li>为了防止拖拽子元素时连同父元素也跟着走，需要阻止mousemove和mouseup的冒泡行为。</li>
+</ol>
+<pre><code><span class="comment">//不做兼容性处理</span>
+<span class="function"><span class="keyword">function</span> <span class="title">drag</span>(<span class="params">element</span>) </span>{ 
+    <span class="keyword">var</span> deltaX, deltaY; <span class="comment">//存储鼠标相对于元素的偏移位置。</span>
+
+    <span class="comment">//注意这里，将事件注册在文档上。</span>
+    <span class="built_in">document</span>.addEventListener(<span class="string">'mousedown'</span>, downHandler);
+    <span class="built_in">document</span>.addEventListener(<span class="string">'mousemove'</span>, moveHandler, <span class="literal">true</span>);
+    <span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, upHandler, <span class="literal">true</span>);
+
+    <span class="function"><span class="keyword">function</span> <span class="title">downHandler</span>(<span class="params">e</span>) </span>{
+        <span class="comment">//这里假设元素绝对定位相对于body，否则需要精确计算其文档偏移量。</span>
+        <span class="comment">//计算方法就是通过鼠标的文档坐标减去元素的文档坐标。</span>
+        deltaX = e.clientX + pageXOffset - element.offsetLeft;
+        deltaY = e.clientY + pageYOffset - element.offsetTop;
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">moveHandler</span>(<span class="params">e</span>) </span>{
+        element.style.left = e.clientX + pageXOffset - deltaX + <span class="string">'px'</span>;
+        element.style.top = e.clientY + pageYOffset - deltaY + <span class="string">'px'</span>;
+        e.stopPropagation();
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">upHandler</span>(<span class="params">e</span>) </span>{
+        <span class="built_in">document</span>.removeEventListener(<span class="string">'mousemove'</span>, moveHandler, <span class="literal">true</span>);
+        <span class="built_in">document</span>.removeEventListener(<span class="string">'mouseup'</span>, upHandler, <span class="literal">true</span>);
+        e.stopPropagation();
+    }
+}
+</code></pre><h3 id="问：鼠标滚轮事件为什么有两个，它们的用法有什么不同？">问：鼠标滚轮事件为什么有两个，它们的用法有什么不同？</h3><p>答：一般滚轮事件是mousewheel，仅有firefox不支持它，所以只能用非标准的DOMMouseScroll来做兼容。在使用上也有区别，mousewheel事件对象上的wheelDelta能反映出滚动滚轮的情况，远离用户方向的一次滚动最小单位为120,接近的则为-120。</p>
+<p>而对于DOMMouseScroll来说，利用事件对象上的detail属性反映滚轮情况。远离用户方向的一次滚动最小单位为-3,接近的则为3。</p>
+<h1 id="键盘与文本事件">键盘与文本事件</h1><ul>
+<li>keydown       按下事件</li>
+<li>keyup         抬起事件</li>
+<li>keypress      敲击事件</li>
+<li>input         文本输入事件</li>
+</ul>
+<h3 id="问：input和key系列事件的本质区别是什么？">问：input和key系列事件的本质区别是什么？</h3><p>答：input事件上新输入的文本真正插入到聚焦的文档之后才触发，而key系列上插入到文档前触发。所以阻止keypress事件可以阻止用户的输入，input事件则可以用一些内容改变(全转换成大写)的场合。</p>
+<h3 id="问：keydown和keypress有什么区别？">问：keydown和keypress有什么区别？</h3><p>答：可以简单地理解为keypress=keydown+keyup，但也并不完全是。比如一直按键不放时，keydown和keypress会交替连续触发。</p>
+<p>另外，keypress常常不能显示组合键，一般在keypress不能捕获的时候使用keydown，keydown里面还有charCode属性，不过有兼容问题。</p>
+<h1 id="DnD拖放事件(Drag-and-Drop)（待续）">DnD拖放事件(Drag-and-Drop)（待续）</h1><ul>
+<li>任何有HTML draggable属性的文档元素都是拖放源。</li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/CSSFragment2/" itemprop="url">
                 CSS常见布局方式总结（下）
               </a>
@@ -895,7 +1030,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -909,7 +1044,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
